@@ -35,7 +35,7 @@ export default function RootLayout({
           <div className="bg-[#232135] overflow-hidden border border-[#72707D] w-full max-w-[1480px] aspect-video shadow-md shadow-black/20 rounded-lg grid grid-rows-layout">
             <TerminalProvider>
               <Header />
-              <div className="h-full relative flex flex-col-reverse overflow-auto">
+              <div className="h-full relative flex flex-col-reverse overflow-auto scrollbar-thin scrollbar-thumb-[#2B283B] scrollbar-track-transparent">
                 <Terminal />
                 <div className="h-full relative">{children}</div>
               </div>
