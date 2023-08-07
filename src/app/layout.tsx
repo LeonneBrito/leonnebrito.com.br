@@ -4,6 +4,8 @@ import { Inter } from 'next/font/google'
 
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
+import { Terminal } from '@/components/Terminal'
+import { TerminalProvider } from '@/hooks/useTerminal'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -31,11 +33,14 @@ export default function RootLayout({
       <body className="bg-[#7F7FD5] bg-app">
         <div className="z-10 relative h-screen p-20 flex items-center justify-center">
           <div className="bg-[#232135] overflow-hidden border border-[#72707D] w-full max-w-[1480px] aspect-video shadow-md shadow-black/20 rounded-lg grid grid-rows-layout">
-            <Header />
-            <div className="h-full relative flex flex-col">
-              <div className="h-full relative">{children}</div>
-            </div>
-            <Footer />
+            <TerminalProvider>
+              <Header />
+              <div className="h-full relative flex flex-col">
+                <Terminal />
+                <div className="h-full relative">{children}</div>
+              </div>
+              <Footer />
+            </TerminalProvider>
           </div>
         </div>
       </body>

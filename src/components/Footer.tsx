@@ -3,10 +3,22 @@
 import { Fira_Code as FiraCode } from 'next/font/google'
 
 import { GitBranch, Hexagon } from 'lucide-react'
+import { useState } from 'react'
+import { useTerminal } from '@/hooks/useTerminal'
 
 const firaCode = FiraCode({ subsets: ['latin'] })
 
 export function Footer() {
+  const { handleUserInput } = useTerminal()
+  const [input, setInput] = useState('' as string)
+
+  const handleInput = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      handleUserInput(input)
+      setInput('')
+    }
+  }
+
   return (
     <div
       className={`text-sm p-3 text-[#8F8CA8] flex flex-col gap-2 items-start justify-start bg-[#2a273f] border-t-2 border-[#72707D]/20 ${firaCode.className}`}
@@ -25,6 +37,9 @@ export function Footer() {
       <input
         type="text"
         className="w-full bg-transparent focus:outline-none font-mono"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        onKeyDown={handleInput}
       />
     </div>
   )
