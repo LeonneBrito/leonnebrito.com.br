@@ -39,6 +39,7 @@ export function Footer() {
         value={input}
         onChange={(e) => setInput(e.target.value)}
         onKeyDown={handleInput}
+        placeholder='Type "help" for more information.'
       />
     </div>
   )
