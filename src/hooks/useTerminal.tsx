@@ -29,6 +29,7 @@ const commands: CommandObject = {
 type HistoryItem = {
   input: string
   output: string
+  error: boolean
   executionTime?: number
 }
 
@@ -79,6 +80,7 @@ const TerminalProvider = ({ children }: { children: ReactNode }) => {
         payload: {
           input: command.input,
           output: command.output,
+          error: false,
           executionTime: getRandomExecutionTime().toFixed(
             2,
           ) as unknown as number,
@@ -87,7 +89,12 @@ const TerminalProvider = ({ children }: { children: ReactNode }) => {
     } else {
       dispatch({
         type: ActionType.AddToHistory,
-        payload: { input, output: 'Command not found.', executionTime: 0.0 },
+        payload: {
+          input,
+          output: 'Command not found.',
+          error: true,
+          executionTime: 0.0,
+        },
       })
     }
   }
