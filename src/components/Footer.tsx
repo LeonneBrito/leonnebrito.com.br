@@ -1,12 +1,11 @@
 'use client'
-
-import { Fira_Code as FiraCode } from 'next/font/google'
-
-import { GitBranch, Hexagon } from 'lucide-react'
 import { useState } from 'react'
 import { useTerminal } from '@/hooks/useTerminal'
+import { GitBranch, Hexagon } from 'lucide-react'
 
-const firaCode = FiraCode({ subsets: ['latin'] })
+import { JetBrains_Mono as JetBrains } from 'next/font/google'
+
+const jetBrains = JetBrains({ subsets: ['latin'] })
 
 export function Footer() {
   const { handleUserInput } = useTerminal()
@@ -21,7 +20,7 @@ export function Footer() {
 
   return (
     <div
-      className={`text-sm p-3 text-[#8F8CA8] flex flex-col gap-2 items-start justify-start bg-[#2a273f] border-t-2 border-[#72707D]/20 ${firaCode.className}`}
+      className={`text-sm p-3 text-[#8F8CA8] flex flex-col gap-2 items-start justify-start bg-[#2a273f] border-t-2 border-[#72707D]/20 ${jetBrains.className}`}
     >
       <span className="flex gap-2 items-center">
         <b className="text-blue-300 font-bold">leonnebrito.com.br</b> on{' '}

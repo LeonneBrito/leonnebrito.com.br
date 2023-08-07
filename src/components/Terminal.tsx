@@ -1,10 +1,9 @@
 'use client'
-
-import { Fira_Code as FiraCode } from 'next/font/google'
-
 import { useTerminal } from '@/hooks/useTerminal'
 
-const firaCode = FiraCode({ subsets: ['latin'] })
+import { JetBrains_Mono as JetBrains } from 'next/font/google'
+
+const jetBrains = JetBrains({ subsets: ['latin'] })
 
 export function Terminal() {
   const { history } = useTerminal()
@@ -19,13 +18,13 @@ export function Terminal() {
           key={index}
           className="w-full flex gap-1 p-2 flex-col text-sm border-t-2 border-[#72707D]/10"
         >
-          <span className={`${firaCode.className} text-[#8F8CA8] text-xs`}>
+          <span className={`${jetBrains.className} text-[#8F8CA8] text-xs`}>
             ~ ({item.executionTime}ms)
           </span>
-          <span className={`${firaCode.className} text-gray-50 text-bold`}>
+          <span className={`${jetBrains.className} text-gray-50 text-bold`}>
             {item.input}
           </span>
-          <span className={`${firaCode.className} text-[#8F8CA8]`}>
+          <span className={`${jetBrains.className} text-[#8F8CA8]`}>
             {item.output}
           </span>
         </div>
