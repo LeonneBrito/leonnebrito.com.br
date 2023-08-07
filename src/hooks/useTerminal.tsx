@@ -64,7 +64,7 @@ const commands: CommandObject = {
       <span class="text-[#E0DEF2]">Design:</span> Figma, Adobe XD, Adobe Photoshop<br />
       <span class="text-[#E0DEF2]">Hard Skills:</span> Problem Solving, Object Oriented Programming, Functional Programming, Data Structures, Algorithms<br />
       <span class="text-[#E0DEF2]">Soft Skills:</span> Teamwork, Communication, Problem Solving, Time Management, Adaptability<br />
-      `,
+      <span class="text-[#E0DEF2]">Other:</span> Node.js, React Native, Flutter, Electron, GraphQL <br />`,
   },
   education: {
     input: 'education',
