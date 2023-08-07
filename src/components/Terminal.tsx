@@ -25,9 +25,12 @@ export function Terminal() {
           <span className={`${jetBrains.className} text-[#E0DEF2] text-bold`}>
             {item.input}
           </span>
-          <span className={`${jetBrains.className} text-[#8F8CA8]`}>
-            {item.output}
-          </span>
+          <span
+            className={`${jetBrains.className} text-[#8F8CA8] text-sm`}
+            dangerouslySetInnerHTML={{
+              __html: item.output,
+            }}
+          />
         </div>
       ))}
     </div>
