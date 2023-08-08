@@ -8,13 +8,17 @@ import { JetBrains_Mono as JetBrains } from 'next/font/google'
 const jetBrains = JetBrains({ subsets: ['latin'] })
 
 export function Footer() {
-  const { handleUserInput } = useTerminal()
+  const { history, handleUserInput } = useTerminal()
   const [input, setInput] = useState('' as string)
 
   const handleInput = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       handleUserInput(input)
       setInput('')
+    }
+
+    if (e.key === 'ArrowUp') {
+      setInput(history[history.length - 1].input)
     }
   }
 
