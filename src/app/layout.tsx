@@ -44,7 +44,11 @@ export default function RootLayout({
           <div className="mx-auto my-[6dvh] flex max-w-full flex-col gap-3 p-6 md:max-w-2xl">
             <Header />
             <main>
-              {children}
+              <section className="flex">
+                <div className="group relative flex h-fit w-full flex-col gap-3 px-3 py-6">
+                  {children}
+                </div>
+              </section>
               <Links />
             </main>
             <Footer />

@@ -1,19 +1,6 @@
 import { Fragment } from 'react'
 
-const links = [
-  {
-    name: 'GitHub',
-    url: 'https://github.com/LeonneBrito',
-  },
-  {
-    name: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/leonnebrito/',
-  },
-  {
-    name: 'Instagram',
-    url: 'https://www.instagram.com/leonne.brito/',
-  },
-]
+import { links } from '@/constants/links'
 
 export default function Links() {
   return (
