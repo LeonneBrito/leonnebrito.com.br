@@ -3,6 +3,10 @@ import './globals.css'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 
+import Footer from '@/components/Footer'
+import Header from '@/components/Header'
+import Links from '@/components/Links'
+
 import { ThemeProvider } from './providers'
 
 const geistSans = localFont({
@@ -29,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white font-sans text-xs leading-loose text-gray-600`}
       >
         <ThemeProvider
           attribute="class"
@@ -37,7 +41,14 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <div className="mx-auto my-[6dvh] flex max-w-full flex-col gap-3 p-6 md:max-w-2xl">
+            <Header />
+            <main>
+              {children}
+              <Links />
+            </main>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>
