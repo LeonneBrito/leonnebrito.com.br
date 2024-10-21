@@ -2,9 +2,7 @@ export default function Footer() {
   return (
     <footer className="relative mt-4 w-full px-3">
       <div className="text-pretty text-xs leading-loose">
-        <p>
-          Tecnologia é qualquer coisa que não estava por aí quando você nasceu.
-        </p>
+        <p>Technology is anything that wasn’t around when you were born.</p>
         <p>
           ©{''}
           {new Date().getFullYear()} Leonne Brito.

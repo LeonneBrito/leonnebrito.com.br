@@ -24,7 +24,7 @@ export default function Links() {
           ))}
           <div className="text-pretty text-xs leading-loose col-span-2 sm:col-auto">
             <p>
-              Ou falamos por email:{' '}
+              Or let&apos;s talk via email:{' '}
               <a
                 href="mailto:contato@leonnebrito.com.br"
                 className="px-1 font-bold underline decoration-gray-500 underline-offset-2 outline-gray-400 transition-colors duration-150 ease-linear hover:text-gray-800 hover:decoration-gray-800"

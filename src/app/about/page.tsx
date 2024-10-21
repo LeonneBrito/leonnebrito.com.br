@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import { experiences } from '@/constants/experiencies'
 
 export const metadata: Metadata = {
-  title: 'Sobre',
+  title: 'About',
   alternates: {
     canonical: '/about',
   },
@@ -13,40 +13,39 @@ export default function About() {
   return (
     <>
       <h1 className="text-base font-bold leading-loose text-gray-800 text-pretty">
-        Olá, novamente!
+        Hello, again!
       </h1>
       <div className="text-pretty text-xs leading-loose">
         <p>
-          Sou Leonne, engenheiro de software com mais de 5 anos de experiência
-          em desenvolvimento e gestão de projetos diversos, nascido no Brasil.
-          🇧🇷
+          I’m Leonne, a software engineer with over 5 years of experience in
+          development and project management, born in Brazil. 🇧🇷
         </p>
         <p>
-          Minha jornada profissional começou há alguns anos e, desde então,
-          venho constantemente aperfeiçoando minhas habilidades através da
-          prática e do entusiasmo por criar soluções inovadoras.
+          My professional journey started a few years ago, and since then, I
+          have been constantly improving my skills through practice and my
+          passion for creating innovative solutions.
         </p>
         <p>
-          Sou apaixonado por arquiteturas de software, como microfrontends e
-          sistemas monolíticos, além de tecnologias como React, Next.js e Vue.js
-          para frontend, e React Native e Flutter para mobile. O que mais me
-          motiva é o desafio de desenhar e implementar interfaces e sistemas
-          eficientes.
+          I’m passionate about software architectures like microfrontends and
+          monolithic systems, as well as technologies like React, Next.js, and
+          Vue.js for front-end, and React Native and Flutter for mobile. What
+          drives me the most is the challenge of designing and implementing
+          efficient interfaces and systems.
         </p>
         <p>
-          Quando não estou desenvolvendo, gosto de me aprofundar em novas
-          tecnologias, jogos e passar bons momentos com minha família.
+          When I&apos;m not developing, I enjoy diving into new technologies,
+          gaming, and spending quality time with my family.
         </p>
       </div>
       <section className="mt-4 flex flex-col gap-4">
         <div className="flex flex-col gap-4 border-t border-solid border-gray-200 pt-4 md:flex-row">
           <h2 className="text-base font-bold leading-loose text-gray-800 text-pretty min-w-[15%]">
-            Experiência
+            Experience
           </h2>
           <div className="flex-shrink grow basis-0 text-pretty text-xs leading-loose">
             {experiences.map((exp, index) => (
               <p key={index}>
-                <span> - {exp.title}</span> na{' '}
+                <span> - {exp.title}</span> at{' '}
                 <a
                   href={exp.link}
                   target="_blank"
@@ -62,12 +61,12 @@ export default function About() {
         </div>
         <div className="flex flex-col gap-4 border-t border-solid border-gray-200 pt-4 md:flex-row">
           <h2 className="text-base font-bold leading-loose text-gray-800 text-pretty min-w-[15%]">
-            Projetos
+            Projects
           </h2>
           <div className="flex-shrink grow basis-0 text-pretty text-xs leading-loose">
             <p>
-              - <span className="font-bold text-gray-700">Flagify:</span> Um
-              aplicativo de gerenciamento de feature-flags para desenvolvedores.
+              - <span className="font-bold text-gray-700">Flagify:</span> A
+              feature-flag management application for developers.
             </p>
           </div>
         </div>
