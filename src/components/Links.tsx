@@ -6,7 +6,7 @@ export default function Links() {
   return (
     <section className="mt-4 flex">
       <div className="group relative flex h-fit w-full flex-col gap-3 px-3 py-6 border-y border-gray-200">
-        <div className="flex gap-3">
+        <div className="grid grid-cols-2 sm:flex sm:gap-3 gap-4">
           {links.map((link, index) => (
             <Fragment key={link.url}>
               <a
@@ -17,10 +17,12 @@ export default function Links() {
               >
                 <span>{link.name}</span>
               </a>
-              {index < links.length - 1 && <span className="mx-2">•</span>}
+              {index < links.length - 1 && (
+                <span className="hidden sm:inline mx-2">•</span>
+              )}
             </Fragment>
           ))}
-          <div className="text-pretty text-xs leading-loose">
+          <div className="text-pretty text-xs leading-loose col-span-2 sm:col-auto">
             <p>
               Ou falamos por email:{' '}
               <a
