@@ -1,4 +1,13 @@
+import { Metadata } from 'next'
+
 import { experiences } from '@/constants/experiencies'
+
+export const metadata: Metadata = {
+  title: 'Sobre',
+  alternates: {
+    canonical: '/about',
+  },
+}
 
 export default function About() {
   return (
