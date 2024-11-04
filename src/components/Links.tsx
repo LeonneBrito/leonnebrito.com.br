@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 
 import { links } from '@/constants/links'
 
-export default function Links() {
+export function Links() {
   return (
     <section className="mt-4 flex">
       <div className="group relative flex h-fit w-full flex-col gap-3 px-3 py-6 border-y border-gray-200">

@@ -1,4 +1,4 @@
-export default function Footer() {
+export function Footer() {
   return (
     <footer className="relative mt-4 w-full px-3">
       <div className="text-pretty text-sm leading-loose">

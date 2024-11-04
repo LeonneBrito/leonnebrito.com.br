@@ -10,7 +10,7 @@ import {
 
 import { ThemeSwitcher } from './theme-switcher'
 
-export default function Header() {
+export function Header() {
   return (
     <header className="relative w-full overflow-x-auto flex items-center justify-between">
       <NavigationMenu className="px-1">
