@@ -13,12 +13,13 @@ export default function Links() {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-1 font-bold underline decoration-gray-500 underline-offset-2 outline-gray-400 transition-colors duration-150 ease-linear hover:text-gray-800 hover:decoration-gray-800"
+                className="px-1 font-bold underline decoration-gray-500 underline-offset-2 outline-gray-400 transition-colors duration-150 ease-linear hover:text-gray-800 hover:decoration-gray-800 flex items-center gap-1"
               >
+                <link.icon className="inline-block w-4 h-4" />
                 <span>{link.name}</span>
               </a>
               {index < links.length - 1 && (
-                <span className="hidden sm:inline mx-2">•</span>
+                <span className="text-gray-300">•</span>
               )}
             </Fragment>
           ))}
