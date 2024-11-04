@@ -8,9 +8,11 @@ import {
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu'
 
+import { ThemeSwitcher } from './theme-switcher'
+
 export default function Header() {
   return (
-    <header className="relative w-full overflow-x-auto">
+    <header className="relative w-full overflow-x-auto flex items-center justify-between">
       <NavigationMenu className="px-1">
         <NavigationMenuList>
           <NavigationMenuItem>
@@ -29,6 +31,7 @@ export default function Header() {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
+      <ThemeSwitcher />
     </header>
   )
 }

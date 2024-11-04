@@ -2,24 +2,15 @@ import './globals.css'
 
 import { Analytics } from '@vercel/analytics/react'
 import type { Metadata } from 'next'
-import localFont from 'next/font/local'
+import { Inter } from 'next/font/google'
 
-import Footer from '@/components/Footer'
-import Header from '@/components/Header'
-import Links from '@/components/Links'
+import Footer from '@/components/footer'
+import Header from '@/components/header'
+import Links from '@/components/links'
 
 import { ThemeProvider } from './providers'
 
-const geistSans = localFont({
-  src: './fonts/GeistVF.woff',
-  variable: '--font-geist-sans',
-  weight: '100 900',
-})
-const geistMono = localFont({
-  src: './fonts/GeistMonoVF.woff',
-  variable: '--font-geist-mono',
-  weight: '100 900',
-})
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://leonnebrito.com.br'),
@@ -41,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white font-sans text-xs leading-loose text-gray-600`}
+        className={`${inter.className} antialiased font-sans text-sm leading-loose dark:text-gray-300 tracking-tighter`}
       >
         <ThemeProvider
           attribute="class"

@@ -1,10 +1,10 @@
 export default function Home() {
   return (
     <>
-      <h1 className="text-base font-bold leading-loose text-gray-800 text-pretty">
+      <h1 className="text-base font-medium leading-loose text-gray-800 text-pretty dark:text-gray-200">
         Hello, I&apos;m Leonne!
       </h1>
-      <div className="text-pretty text-xs leading-loose">
+      <div className="text-pretty text-sm leading-loose">
         <p>
           I’m a front-end developer and technology enthusiast. I currently work
           at{' '}
