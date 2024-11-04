@@ -8,7 +8,7 @@ import {
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu'
 
-import { ThemeSwitcher } from './theme-switcher'
+import { ThemeSwitcher } from './ThemeSwitcher'
 
 export function Header() {
   return (
