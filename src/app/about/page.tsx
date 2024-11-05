@@ -50,7 +50,7 @@ export default function About() {
                   href={exp.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-1 font-medium underline decoration-gray-500 underline-offset-2 outline-gray-400 transition-colors duration-150 ease-linear hover:text-gray-800 hover:decoration-gray-800"
+                  className="px-1 font-medium underline underline-offset-2 transition-colors duration-150 ease-linear"
                 >
                   {exp.company}
                 </a>{' '}

@@ -13,7 +13,7 @@ export function Links() {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-1 font-medium underline decoration-gray-500 underline-offset-2 outline-gray-400 transition-colors duration-150 ease-linear hover:text-gray-800 hover:decoration-gray-800 flex items-center gap-1"
+                className="px-1 font-medium underline underline-offset-2 transition-colors duration-150 ease-linear flex items-center gap-1"
               >
                 <link.icon className="inline-block w-4 h-4" />
                 <span>{link.name}</span>
@@ -28,7 +28,7 @@ export function Links() {
               Or let&apos;s talk via email:{' '}
               <a
                 href="mailto:contato@leonnebrito.com.br"
-                className="px-1 font-medium underline decoration-gray-500 underline-offset-2 outline-gray-400 transition-colors duration-150 ease-linear hover:text-gray-800 hover:decoration-gray-800"
+                className="px-1 font-medium underline underline-offset-2 transition-colors duration-150 ease-linear"
               >
                 contato@leonnebrito.com.br
               </a>
