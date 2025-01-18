@@ -10,6 +10,8 @@ import { Links } from '@/components/Links'
 
 import { ThemeProvider } from './providers'
 
+export const dynamic = 'force-dynamic'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
