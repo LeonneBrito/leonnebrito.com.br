@@ -1,9 +1,15 @@
 export const experiences = [
   {
+    title: 'Senior Fullstack Developer',
+    company: 'Mevo',
+    link: 'https://www.mevo.com.br/',
+    period: 'Sep 2025 - Present',
+  },
+  {
     title: 'Senior Software Developer',
     company: 'Semantix',
     link: 'https://semantix.ai/',
-    period: 'Sep 2024 - Present',
+    period: 'Sep 2024 - Aug 2025',
   },
   {
     title: 'Senior Software Developer',

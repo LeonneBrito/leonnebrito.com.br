@@ -1,28 +1,28 @@
 export default function Home() {
   return (
-    <>
-      <h1 className="text-base font-medium leading-loose text-gray-800 text-pretty dark:text-gray-200">
+    <div className="flex flex-col gap-3">
+      <h2 className="text-pretty text-base font-medium leading-loose text-gray-900 dark:text-gray-100">
         Hello, I&apos;m Leonne!
-      </h1>
-      <div className="text-pretty text-sm leading-loose">
+      </h2>
+      <div className="flex flex-col gap-3 text-pretty text-sm leading-loose text-gray-600 dark:text-gray-400">
         <p>
-          I’m a front-end developer and technology enthusiast. I currently work
-          at{' '}
+          I&apos;m a fullstack developer and technology enthusiast. I currently
+          work at{' '}
           <a
-            href="https://www.linkedin.com/company/semantix/"
+            href="https://www.mevo.com.br/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-pretty underline"
+            className="link-underline font-medium text-gray-900 dark:text-gray-100"
           >
-            Semantix
+            Mevo
           </a>
           .
         </p>
         <p>
           My main focus is on web development with technologies like React,
-          Next.js, and Tailwind CSS.
+          Next.js, Node.js, and Tailwind CSS.
         </p>
       </div>
-    </>
+    </div>
   )
 }
