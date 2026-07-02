@@ -1,0 +1,61 @@
+{
+  "metadata": {
+    "title": "Leonne Brito",
+    "description": "Fullstack developer, enthusiast of web technologies. Available for freelance work.",
+    "aboutTitle": "About"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About"
+  },
+  "theme": {
+    "toggle": "Toggle theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "language": {
+    "toggle": "Change language",
+    "en": "English",
+    "pt": "Português"
+  },
+  "profile": {
+    "tagline": "Fullstack developer & technology enthusiast",
+    "location": "Brazil",
+    "available": "Available for work — mainly freelance"
+  },
+  "home": {
+    "greeting": "Hello, I'm Leonne!",
+    "intro": "I'm a fullstack developer and technology enthusiast. I currently work at <company>Mevo</company>.",
+    "focus": "My main focus is on web development with technologies like React, Next.js, Node.js, and Tailwind CSS.",
+    "availability": "I'm currently open to new opportunities, mainly freelance work. <email>Let's talk</email>."
+  },
+  "about": {
+    "greeting": "Hello, again!",
+    "bio1": "I'm Leonne, a software engineer with over 5 years of experience in development and project management, born in Brazil. 🇧🇷",
+    "bio2": "My professional journey started a few years ago, and since then, I have been constantly improving my skills through practice and my passion for creating innovative solutions.",
+    "bio3": "As a fullstack developer, I'm passionate about software architectures like microfrontends and monolithic systems. I work with React, Next.js, and Vue.js on the front-end, Node.js on the back-end, and React Native and Flutter for mobile. What drives me the most is the challenge of designing and implementing efficient interfaces and systems end to end.",
+    "bio4": "When I'm not developing, I enjoy diving into new technologies, gaming, and spending quality time with my family.",
+    "experienceTitle": "Experience",
+    "projectsTitle": "Projects",
+    "present": "Present"
+  },
+  "roles": {
+    "seniorFullstack": "Senior Fullstack Developer",
+    "seniorSoftware": "Senior Software Developer",
+    "midSoftware": "Mid-level Software Developer"
+  },
+  "projects": {
+    "flagify": {
+      "name": "Flagify",
+      "description": "A feature-flag management application for developers."
+    }
+  },
+  "links": {
+    "emailPrompt": "Or let's talk via email:"
+  },
+  "footer": {
+    "quote": "Technology is anything that wasn't around when you were born.",
+    "rights": "© {year} Leonne Brito. All rights reserved."
+  }
+}

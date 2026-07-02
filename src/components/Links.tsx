@@ -1,8 +1,11 @@
 import { Mail } from 'lucide-react'
+import { getTranslations } from 'next-intl/server'
 
 import { links } from '@/constants/links'
 
-export function Links() {
+export async function Links() {
+  const t = await getTranslations('links')
+
   return (
     <section className="mt-4 flex">
       <div className="relative flex h-fit w-full flex-col gap-4 border-y border-border px-3 py-6">
@@ -22,7 +25,7 @@ export function Links() {
         </div>
         <p className="inline-flex flex-wrap items-center gap-1 text-pretty text-sm leading-loose text-gray-600 dark:text-gray-400">
           <Mail className="h-4 w-4" />
-          Or let&apos;s talk via email:{' '}
+          {t('emailPrompt')}{' '}
           <a
             href="mailto:contato@leonnebrito.com.br"
             className="link-underline font-medium text-gray-900 dark:text-gray-100"

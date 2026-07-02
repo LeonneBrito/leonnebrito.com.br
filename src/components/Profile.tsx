@@ -1,7 +1,10 @@
 import { MapPin } from 'lucide-react'
 import Image from 'next/image'
+import { getTranslations } from 'next-intl/server'
 
-export function Profile() {
+export async function Profile() {
+  const t = await getTranslations('profile')
+
   return (
     <section className="flex flex-col items-start gap-4 px-3 sm:flex-row sm:items-center">
       <div className="relative shrink-0">
@@ -20,16 +23,19 @@ export function Profile() {
           Leonne Brito
         </h1>
         <p className="text-sm leading-snug text-muted-foreground">
-          Fullstack developer &amp; technology enthusiast
+          {t('tagline')}
         </p>
         <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
           <span className="inline-flex items-center gap-1">
             <MapPin className="h-3.5 w-3.5" />
-            Brazil
+            {t('location')}
           </span>
-          <span className="inline-flex items-center gap-1 rounded-full border border-border bg-muted px-2 py-0.5 font-medium text-muted-foreground">
-            <span className="h-1.5 w-1.5 rounded-full bg-muted-foreground/60" />
-            Not available for work
+          <span className="inline-flex items-center gap-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 font-medium text-emerald-700 dark:text-emerald-400">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
+            </span>
+            {t('available')}
           </span>
         </div>
       </div>

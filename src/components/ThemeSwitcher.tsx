@@ -1,6 +1,7 @@
 'use client'
 
 import { Monitor, Moon, Sun } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import { useTheme } from 'next-themes'
 import * as React from 'react'
 
@@ -14,6 +15,7 @@ import {
 
 export function ThemeSwitcher() {
   const { setTheme } = useTheme()
+  const t = useTranslations('theme')
 
   return (
     <DropdownMenu>
@@ -25,7 +27,7 @@ export function ThemeSwitcher() {
         >
           <Sun className="h-[1.1rem] w-[1.1rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
           <Moon className="absolute h-[1.1rem] w-[1.1rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <span className="sr-only">Toggle theme</span>
+          <span className="sr-only">{t('toggle')}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
@@ -34,21 +36,21 @@ export function ThemeSwitcher() {
           onClick={() => setTheme('light')}
         >
           <Sun className="h-4 w-4" />
-          Light
+          {t('light')}
         </DropdownMenuItem>
         <DropdownMenuItem
           className="flex items-center gap-2"
           onClick={() => setTheme('dark')}
         >
           <Moon className="h-4 w-4" />
-          Dark
+          {t('dark')}
         </DropdownMenuItem>
         <DropdownMenuItem
           className="flex items-center gap-2"
           onClick={() => setTheme('system')}
         >
           <Monitor className="h-4 w-4" />
-          System
+          {t('system')}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

@@ -1,44 +1,64 @@
-export const experiences = [
+export type ExperienceRole =
+  | 'seniorFullstack'
+  | 'seniorSoftware'
+  | 'midSoftware'
+
+export interface Experience {
+  role: ExperienceRole
+  company: string
+  link: string
+  start: string
+  end: string | null
+}
+
+export const experiences: Experience[] = [
   {
-    title: 'Senior Fullstack Developer',
+    role: 'seniorFullstack',
     company: 'Mevo',
     link: 'https://www.mevo.com.br/',
-    period: 'Sep 2025 - Present',
+    start: '2025-09',
+    end: null,
   },
   {
-    title: 'Senior Software Developer',
+    role: 'seniorSoftware',
     company: 'Semantix',
     link: 'https://semantix.ai/',
-    period: 'Sep 2024 - Aug 2025',
+    start: '2024-09',
+    end: '2025-08',
   },
   {
-    title: 'Senior Software Developer',
+    role: 'seniorSoftware',
     company: 'nav9',
     link: 'https://nav9.tech/',
-    period: 'Aug 2022 - Aug 2024',
+    start: '2022-08',
+    end: '2024-08',
   },
   {
-    title: 'Senior Software Developer',
+    role: 'seniorSoftware',
     company: 'Futura Sistemas',
     link: 'https://futurasistemas.com.br/',
-    period: 'Sep 2023 - May 2024',
+    start: '2023-09',
+    end: '2024-05',
   },
   {
-    title: 'Mid-level Software Developer',
+    role: 'midSoftware',
     company: 'Reserva',
     link: 'https://www.usereserva.com/',
-    period: 'Jun 2021 - Aug 2022',
+    start: '2021-06',
+    end: '2022-08',
   },
   {
-    title: 'Senior Software Developer',
+    role: 'seniorSoftware',
     company: 'Sem Parar',
     link: 'https://www.semparar.com.br/',
-    period: 'Apr 2022 - Jun 2022',
+    start: '2022-04',
+    end: '2022-06',
   },
   {
-    title: 'Mid-level Software Developer',
+    role: 'midSoftware',
     company: 'Trivod',
     link: 'https://www.trivod.com/',
-    period: 'Jan 2022 - Feb 2022',
+    start: '2022-01',
+    end: '2022-02',
   },
 ]

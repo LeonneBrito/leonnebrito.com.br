@@ -1,48 +1,48 @@
 import { ArrowUpRight } from 'lucide-react'
 import { Metadata } from 'next'
+import { getFormatter, getTranslations } from 'next-intl/server'
 
 import { experiences } from '@/constants/experiencies'
 
-export const metadata: Metadata = {
-  title: 'About',
-  alternates: {
-    canonical: '/about',
-  },
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations('metadata')
+
+  return {
+    title: t('aboutTitle'),
+    alternates: {
+      canonical: '/about',
+    },
+  }
 }
 
-export default function About() {
+export default async function About() {
+  const t = await getTranslations('about')
+  const tRoles = await getTranslations('roles')
+  const tProjects = await getTranslations('projects')
+  const format = await getFormatter()
+
+  function formatMonth(value: string) {
+    return format.dateTime(new Date(`${value}-01T00:00:00`), {
+      month: 'short',
+      year: 'numeric',
+    })
+  }
+
   return (
     <div className="flex flex-col gap-3">
       <h2 className="text-pretty text-base font-medium leading-loose text-gray-900 dark:text-gray-100">
-        Hello, again!
+        {t('greeting')}
       </h2>
       <div className="flex flex-col gap-3 text-pretty text-sm leading-loose text-gray-600 dark:text-gray-400">
-        <p>
-          I&apos;m Leonne, a software engineer with over 5 years of experience
-          in development and project management, born in Brazil. 🇧🇷
-        </p>
-        <p>
-          My professional journey started a few years ago, and since then, I
-          have been constantly improving my skills through practice and my
-          passion for creating innovative solutions.
-        </p>
-        <p>
-          As a fullstack developer, I&apos;m passionate about software
-          architectures like microfrontends and monolithic systems. I work with
-          React, Next.js, and Vue.js on the front-end, Node.js on the back-end,
-          and React Native and Flutter for mobile. What drives me the most is
-          the challenge of designing and implementing efficient interfaces and
-          systems end to end.
-        </p>
-        <p>
-          When I&apos;m not developing, I enjoy diving into new technologies,
-          gaming, and spending quality time with my family.
-        </p>
+        <p>{t('bio1')}</p>
+        <p>{t('bio2')}</p>
+        <p>{t('bio3')}</p>
+        <p>{t('bio4')}</p>
       </div>
 
       <section className="mt-6 flex flex-col gap-3">
         <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-          Experience
+          {t('experienceTitle')}
         </h3>
         <ol className="relative flex flex-col border-l border-border">
           {experiences.map((exp, index) => (
@@ -59,10 +59,11 @@ export default function About() {
                   <ArrowUpRight className="h-3.5 w-3.5 opacity-0 transition-opacity group-hover:opacity-100" />
                 </a>
                 <span className="text-sm leading-snug text-gray-600 dark:text-gray-400">
-                  {exp.title}
+                  {tRoles(exp.role)}
                 </span>
                 <span className="text-xs leading-snug text-muted-foreground">
-                  {exp.period}
+                  {formatMonth(exp.start)} -{' '}
+                  {exp.end ? formatMonth(exp.end) : t('present')}
                 </span>
               </div>
             </li>
@@ -72,18 +73,18 @@ export default function About() {
 
       <section className="mt-4 flex flex-col gap-3">
         <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-          Projects
+          {t('projectsTitle')}
         </h3>
         <a
           href="#"
           className="group flex flex-col gap-1 rounded-lg border border-border bg-card/50 p-4 transition-colors hover:border-gray-300 hover:bg-accent/50 dark:hover:border-gray-700"
         >
           <span className="flex items-center gap-1 text-sm font-medium text-gray-900 dark:text-gray-100">
-            Flagify
+            {tProjects('flagify.name')}
             <ArrowUpRight className="h-3.5 w-3.5 opacity-0 transition-opacity group-hover:opacity-100" />
           </span>
           <span className="text-sm leading-snug text-gray-600 dark:text-gray-400">
-            A feature-flag management application for developers.
+            {tProjects('flagify.description')}
           </span>
         </a>
       </section>

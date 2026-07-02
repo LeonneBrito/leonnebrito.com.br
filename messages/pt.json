@@ -1,0 +1,61 @@
+{
+  "metadata": {
+    "title": "Leonne Brito",
+    "description": "Desenvolvedor fullstack, entusiasta de tecnologias web. Disponível para trabalhos freelancer.",
+    "aboutTitle": "Sobre"
+  },
+  "nav": {
+    "home": "Início",
+    "about": "Sobre"
+  },
+  "theme": {
+    "toggle": "Alternar tema",
+    "light": "Claro",
+    "dark": "Escuro",
+    "system": "Sistema"
+  },
+  "language": {
+    "toggle": "Mudar idioma",
+    "en": "English",
+    "pt": "Português"
+  },
+  "profile": {
+    "tagline": "Desenvolvedor fullstack & entusiasta de tecnologia",
+    "location": "Brasil",
+    "available": "Disponível para trabalhos — principalmente freelancer"
+  },
+  "home": {
+    "greeting": "Olá, eu sou o Leonne!",
+    "intro": "Sou desenvolvedor fullstack e entusiasta de tecnologia. Atualmente trabalho na <company>Mevo</company>.",
+    "focus": "Meu foco principal é o desenvolvimento web com tecnologias como React, Next.js, Node.js e Tailwind CSS.",
+    "availability": "No momento estou aberto a novas oportunidades, principalmente trabalhos freelancer. <email>Vamos conversar</email>."
+  },
+  "about": {
+    "greeting": "Olá, de novo!",
+    "bio1": "Sou o Leonne, engenheiro de software com mais de 5 anos de experiência em desenvolvimento e gestão de projetos, nascido no Brasil. 🇧🇷",
+    "bio2": "Minha jornada profissional começou há alguns anos e, desde então, venho aprimorando constantemente minhas habilidades através da prática e da minha paixão por criar soluções inovadoras.",
+    "bio3": "Como desenvolvedor fullstack, sou apaixonado por arquiteturas de software como microfrontends e sistemas monolíticos. Trabalho com React, Next.js e Vue.js no front-end, Node.js no back-end, e React Native e Flutter no mobile. O que mais me motiva é o desafio de projetar e implementar interfaces e sistemas eficientes de ponta a ponta.",
+    "bio4": "Quando não estou programando, gosto de mergulhar em novas tecnologias, jogar e passar bons momentos com a minha família.",
+    "experienceTitle": "Experiência",
+    "projectsTitle": "Projetos",
+    "present": "Atual"
+  },
+  "roles": {
+    "seniorFullstack": "Desenvolvedor Fullstack Sênior",
+    "seniorSoftware": "Desenvolvedor de Software Sênior",
+    "midSoftware": "Desenvolvedor de Software Pleno"
+  },
+  "projects": {
+    "flagify": {
+      "name": "Flagify",
+      "description": "Um aplicativo de gerenciamento de feature flags para desenvolvedores."
+    }
+  },
+  "links": {
+    "emailPrompt": "Ou vamos conversar por e-mail:"
+  },
+  "footer": {
+    "quote": "Tecnologia é tudo aquilo que não existia quando você nasceu.",
+    "rights": "© {year} Leonne Brito. Todos os direitos reservados."
+  }
+}

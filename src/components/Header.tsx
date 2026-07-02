@@ -2,18 +2,21 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useTranslations } from 'next-intl'
 
 import { cn } from '@/lib/utils'
 
+import { LanguageSwitcher } from './LanguageSwitcher'
 import { ThemeSwitcher } from './ThemeSwitcher'
 
 const navItems = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-]
+  { href: '/', key: 'home' },
+  { href: '/about', key: 'about' },
+] as const
 
 export function Header() {
   const pathname = usePathname()
+  const t = useTranslations('nav')
 
   return (
     <header className="sticky top-4 z-20 flex w-full items-center justify-between rounded-full border border-border/60 bg-background/70 px-2 py-1.5 shadow-sm backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
@@ -34,12 +37,15 @@ export function Header() {
               {isActive && (
                 <span className="absolute inset-0 -z-10 rounded-full bg-accent" />
               )}
-              {item.label}
+              {t(item.key)}
             </Link>
           )
         })}
       </nav>
-      <ThemeSwitcher />
+      <div className="flex items-center">
+        <LanguageSwitcher />
+        <ThemeSwitcher />
+      </div>
     </header>
   )
 }
