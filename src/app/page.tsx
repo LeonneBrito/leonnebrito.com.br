@@ -28,7 +28,7 @@ export default async function Home() {
           {t.rich('availability', {
             email: (chunks) => (
               <a
-                href="mailto:contato@leonnebrito.com.br"
+                href="mailto:britoleonne@gmail.com"
                 className="link-underline font-medium text-gray-900 dark:text-gray-100"
               >
                 {chunks}

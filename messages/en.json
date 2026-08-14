@@ -2,11 +2,13 @@
   "metadata": {
     "title": "Leonne Brito",
     "description": "Fullstack developer, enthusiast of web technologies. Available for freelance work.",
-    "aboutTitle": "About"
+    "aboutTitle": "About",
+    "portfolioTitle": "Portfolio"
   },
   "nav": {
     "home": "Home",
-    "about": "About"
+    "about": "About",
+    "portfolio": "Portfolio"
   },
   "theme": {
     "toggle": "Toggle theme",
@@ -26,9 +28,9 @@
   },
   "home": {
     "greeting": "Hello, I'm Leonne!",
-    "intro": "I'm a fullstack developer and technology enthusiast. I currently work at <company>Mevo</company>.",
+    "intro": "I'm a fullstack developer and technology enthusiast, with experience at companies like <company>Mevo</company>.",
     "focus": "My main focus is on web development with technologies like React, Next.js, Node.js, and Tailwind CSS.",
-    "availability": "I'm currently open to new opportunities, mainly freelance work. <email>Let's talk</email>."
+    "availability": "I'm currently available for new opportunities, mainly freelance work. <email>Let's talk</email>."
   },
   "about": {
     "greeting": "Hello, again!",
@@ -37,7 +39,6 @@
     "bio3": "As a fullstack developer, I'm passionate about software architectures like microfrontends and monolithic systems. I work with React, Next.js, and Vue.js on the front-end, Node.js on the back-end, and React Native and Flutter for mobile. What drives me the most is the challenge of designing and implementing efficient interfaces and systems end to end.",
     "bio4": "When I'm not developing, I enjoy diving into new technologies, gaming, and spending quality time with my family.",
     "experienceTitle": "Experience",
-    "projectsTitle": "Projects",
     "present": "Present"
   },
   "roles": {
@@ -45,10 +46,21 @@
     "seniorSoftware": "Senior Software Developer",
     "midSoftware": "Mid-level Software Developer"
   },
+  "portfolio": {
+    "greeting": "Some projects I've worked on."
+  },
   "projects": {
-    "flagify": {
-      "name": "Flagify",
-      "description": "A feature-flag management application for developers."
+    "brotarComunicacao": {
+      "name": "Brotar Comunicação",
+      "description": "Website for an electoral, market, and public opinion research agency, active since 2012."
+    },
+    "tiaju10": {
+      "name": "Tia Ju",
+      "description": "Campaign website for State Representative candidate Tia Ju."
+    },
+    "condadoBraveheart": {
+      "name": "Condado Braveheart",
+      "description": "Forum for the Condado Braveheart community, focused on game development."
     }
   },
   "links": {

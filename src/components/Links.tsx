@@ -27,10 +27,10 @@ export async function Links() {
           <Mail className="h-4 w-4" />
           {t('emailPrompt')}{' '}
           <a
-            href="mailto:contato@leonnebrito.com.br"
+            href="mailto:britoleonne@gmail.com"
             className="link-underline font-medium text-gray-900 dark:text-gray-100"
           >
-            contato@leonnebrito.com.br
+            britoleonne@gmail.com
           </a>
         </p>
       </div>

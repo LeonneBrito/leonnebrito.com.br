@@ -12,6 +12,7 @@ import { ThemeSwitcher } from './ThemeSwitcher'
 const navItems = [
   { href: '/', key: 'home' },
   { href: '/about', key: 'about' },
+  { href: '/portfolio', key: 'portfolio' },
 ] as const
 
 export function Header() {

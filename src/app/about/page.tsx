@@ -18,7 +18,6 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function About() {
   const t = await getTranslations('about')
   const tRoles = await getTranslations('roles')
-  const tProjects = await getTranslations('projects')
   const format = await getFormatter()
 
   function formatMonth(value: string) {
@@ -69,24 +68,6 @@ export default async function About() {
             </li>
           ))}
         </ol>
-      </section>
-
-      <section className="mt-4 flex flex-col gap-3">
-        <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-          {t('projectsTitle')}
-        </h3>
-        <a
-          href="#"
-          className="group flex flex-col gap-1 rounded-lg border border-border bg-card/50 p-4 transition-colors hover:border-gray-300 hover:bg-accent/50 dark:hover:border-gray-700"
-        >
-          <span className="flex items-center gap-1 text-sm font-medium text-gray-900 dark:text-gray-100">
-            {tProjects('flagify.name')}
-            <ArrowUpRight className="h-3.5 w-3.5 opacity-0 transition-opacity group-hover:opacity-100" />
-          </span>
-          <span className="text-sm leading-snug text-gray-600 dark:text-gray-400">
-            {tProjects('flagify.description')}
-          </span>
-        </a>
       </section>
     </div>
   )

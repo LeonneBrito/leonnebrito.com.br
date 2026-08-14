@@ -17,7 +17,7 @@ export const experiences: Experience[] = [
     company: 'Mevo',
     link: 'https://www.mevo.com.br/',
     start: '2025-09',
-    end: null,
+    end: '2026-08',
   },
   {
     role: 'seniorSoftware',

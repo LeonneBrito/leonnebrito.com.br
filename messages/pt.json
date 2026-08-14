@@ -2,11 +2,13 @@
   "metadata": {
     "title": "Leonne Brito",
     "description": "Desenvolvedor fullstack, entusiasta de tecnologias web. Disponível para trabalhos freelancer.",
-    "aboutTitle": "Sobre"
+    "aboutTitle": "Sobre",
+    "portfolioTitle": "Portfólio"
   },
   "nav": {
     "home": "Início",
-    "about": "Sobre"
+    "about": "Sobre",
+    "portfolio": "Portfólio"
   },
   "theme": {
     "toggle": "Alternar tema",
@@ -26,9 +28,9 @@
   },
   "home": {
     "greeting": "Olá, eu sou o Leonne!",
-    "intro": "Sou desenvolvedor fullstack e entusiasta de tecnologia. Atualmente trabalho na <company>Mevo</company>.",
+    "intro": "Sou desenvolvedor fullstack e entusiasta de tecnologia, com experiência em empresas como a <company>Mevo</company>.",
     "focus": "Meu foco principal é o desenvolvimento web com tecnologias como React, Next.js, Node.js e Tailwind CSS.",
-    "availability": "No momento estou aberto a novas oportunidades, principalmente trabalhos freelancer. <email>Vamos conversar</email>."
+    "availability": "Atualmente estou disponível para novas oportunidades, principalmente trabalhos freelancer. <email>Vamos conversar</email>."
   },
   "about": {
     "greeting": "Olá, de novo!",
@@ -37,7 +39,6 @@
     "bio3": "Como desenvolvedor fullstack, sou apaixonado por arquiteturas de software como microfrontends e sistemas monolíticos. Trabalho com React, Next.js e Vue.js no front-end, Node.js no back-end, e React Native e Flutter no mobile. O que mais me motiva é o desafio de projetar e implementar interfaces e sistemas eficientes de ponta a ponta.",
     "bio4": "Quando não estou programando, gosto de mergulhar em novas tecnologias, jogar e passar bons momentos com a minha família.",
     "experienceTitle": "Experiência",
-    "projectsTitle": "Projetos",
     "present": "Atual"
   },
   "roles": {
@@ -45,10 +46,21 @@
     "seniorSoftware": "Desenvolvedor de Software Sênior",
     "midSoftware": "Desenvolvedor de Software Pleno"
   },
+  "portfolio": {
+    "greeting": "Alguns projetos em que já trabalhei."
+  },
   "projects": {
-    "flagify": {
-      "name": "Flagify",
-      "description": "Um aplicativo de gerenciamento de feature flags para desenvolvedores."
+    "brotarComunicacao": {
+      "name": "Brotar Comunicação",
+      "description": "Site para agência de pesquisas eleitorais, de mercado e de opinião pública, atuando desde 2012."
+    },
+    "tiaju10": {
+      "name": "Tia Ju",
+      "description": "Site institucional de campanha para a Deputada Estadual Tia Ju."
+    },
+    "condadoBraveheart": {
+      "name": "Condado Braveheart",
+      "description": "Fórum da comunidade Condado Braveheart, voltado para desenvolvimento de jogos (GameDev)."
     }
   },
   "links": {
