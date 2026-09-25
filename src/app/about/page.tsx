@@ -2,6 +2,8 @@ import { ArrowUpRight } from 'lucide-react'
 import { Metadata } from 'next'
 import { getFormatter, getTranslations } from 'next-intl/server'
 
+import { ExternalLink } from '@/components/ExternalLink'
+import { Section } from '@/components/Section'
 import { experiences } from '@/constants/experiencies'
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -16,9 +18,11 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function About() {
-  const t = await getTranslations('about')
-  const tRoles = await getTranslations('roles')
-  const format = await getFormatter()
+  const [t, tRoles, format] = await Promise.all([
+    getTranslations('about'),
+    getTranslations('roles'),
+    getFormatter(),
+  ])
 
   function formatMonth(value: string) {
     return format.dateTime(new Date(`${value}-01T00:00:00`), {
@@ -28,47 +32,55 @@ export default async function About() {
   }
 
   return (
-    <div className="flex flex-col gap-3">
-      <h2 className="text-pretty text-base font-medium leading-loose text-gray-900 dark:text-gray-100">
-        {t('greeting')}
-      </h2>
-      <div className="flex flex-col gap-3 text-pretty text-sm leading-loose text-gray-600 dark:text-gray-400">
-        <p>{t('bio1')}</p>
-        <p>{t('bio2')}</p>
-        <p>{t('bio3')}</p>
-        <p>{t('bio4')}</p>
-      </div>
+    <>
+      <Section id="about-title" title={t('greeting')}>
+        <div className="flex max-w-[62ch] flex-col gap-5 text-pretty leading-relaxed text-muted-foreground">
+          <p className="text-xl leading-snug text-foreground md:text-2xl">
+            {t('bio1')}
+          </p>
+          <p>{t('bio2')}</p>
+          <p>{t('bio3')}</p>
+          <p>{t('bio4')}</p>
+        </div>
+      </Section>
 
-      <section className="mt-6 flex flex-col gap-3">
-        <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-          {t('experienceTitle')}
-        </h3>
-        <ol className="relative flex flex-col border-l border-border">
-          {experiences.map((exp, index) => (
-            <li key={index} className="group relative pb-5 pl-5 last:pb-0">
-              <span className="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full border border-border bg-background transition-colors group-hover:border-gray-900 group-hover:bg-gray-900 dark:group-hover:border-gray-100 dark:group-hover:bg-gray-100" />
+      <Section id="experience-title" title={t('experienceTitle')}>
+        <ol className="flex flex-col gap-6">
+          {experiences.map((exp) => (
+            <li
+              key={`${exp.company}-${exp.start}`}
+              className="grid gap-1 sm:grid-cols-[11rem_1fr] sm:gap-6"
+            >
+              <p className="pt-0.5 font-mono text-xs tabular-nums text-muted-foreground">
+                <time dateTime={exp.start}>{formatMonth(exp.start)}</time>
+                {' - '}
+                {exp.end ? (
+                  <time dateTime={exp.end}>{formatMonth(exp.end)}</time>
+                ) : (
+                  t('present')
+                )}
+              </p>
               <div className="flex flex-col gap-0.5">
-                <a
+                <ExternalLink
                   href={exp.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex w-fit items-center gap-1 text-sm font-medium leading-snug text-gray-900 transition-colors hover:text-gray-600 dark:text-gray-100 dark:hover:text-gray-400"
+                  className="group inline-flex w-fit items-center gap-1 font-medium leading-snug"
                 >
-                  {exp.company}
-                  <ArrowUpRight className="h-3.5 w-3.5 opacity-0 transition-opacity group-hover:opacity-100" />
-                </a>
-                <span className="text-sm leading-snug text-gray-600 dark:text-gray-400">
+                  <span className="underline decoration-transparent decoration-1 underline-offset-[0.25em] transition-[text-decoration-color] duration-150 group-hover:decoration-brand">
+                    {exp.company}
+                  </span>
+                  <ArrowUpRight
+                    aria-hidden
+                    className="h-3.5 w-3.5 text-muted-foreground transition-[color,transform] duration-200 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-brand"
+                  />
+                </ExternalLink>
+                <span className="text-sm leading-snug text-muted-foreground">
                   {tRoles(exp.role)}
-                </span>
-                <span className="text-xs leading-snug text-muted-foreground">
-                  {formatMonth(exp.start)} -{' '}
-                  {exp.end ? formatMonth(exp.end) : t('present')}
                 </span>
               </div>
             </li>
           ))}
         </ol>
-      </section>
-    </div>
+      </Section>
+    </>
   )
 }

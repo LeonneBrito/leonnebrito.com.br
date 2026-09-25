@@ -8,7 +8,8 @@
   "nav": {
     "home": "Início",
     "about": "Sobre",
-    "portfolio": "Portfólio"
+    "portfolio": "Portfólio",
+    "label": "Navegação principal"
   },
   "theme": {
     "toggle": "Alternar tema",
@@ -24,11 +25,11 @@
   "profile": {
     "tagline": "Desenvolvedor fullstack & entusiasta de tecnologia",
     "location": "Brasil",
-    "available": "Disponível para trabalhos — principalmente freelancer"
+    "available": "Disponível para trabalhos, principalmente freelancer"
   },
   "home": {
     "greeting": "Olá, eu sou o Leonne!",
-    "intro": "Sou desenvolvedor fullstack e entusiasta de tecnologia, com experiência em empresas como a <company>Mevo</company>.",
+    "intro": "Sou desenvolvedor fullstack e entusiasta de tecnologia, atualmente Desenvolvedor Front-end Sênior na <current>Stargrid</current>, com experiência anterior em empresas como a <company>Mevo</company>.",
     "focus": "Meu foco principal é o desenvolvimento web com tecnologias como React, Next.js, Node.js e Tailwind CSS.",
     "availability": "Atualmente estou disponível para novas oportunidades, principalmente trabalhos freelancer. <email>Vamos conversar</email>."
   },
@@ -42,6 +43,7 @@
     "present": "Atual"
   },
   "roles": {
+    "seniorFrontend": "Desenvolvedor Front-end Sênior",
     "seniorFullstack": "Desenvolvedor Fullstack Sênior",
     "seniorSoftware": "Desenvolvedor de Software Sênior",
     "midSoftware": "Desenvolvedor de Software Pleno"
@@ -64,10 +66,20 @@
     }
   },
   "links": {
-    "emailPrompt": "Ou vamos conversar por e-mail:"
+    "emailPrompt": "Ou vamos conversar por e-mail:",
+    "title": "Contato"
   },
   "footer": {
     "quote": "Tecnologia é tudo aquilo que não existia quando você nasceu.",
     "rights": "© {year} Leonne Brito. Todos os direitos reservados."
+  },
+  "a11y": {
+    "skip": "Pular para o conteúdo",
+    "newTab": "(abre em nova aba)"
+  },
+  "notFound": {
+    "title": "Página não encontrada",
+    "description": "A página que você procura não existe ou foi movida.",
+    "back": "Voltar ao início"
   }
 }

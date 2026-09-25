@@ -1,4 +1,5 @@
 export type ExperienceRole =
+  | 'seniorFrontend'
   | 'seniorFullstack'
   | 'seniorSoftware'
   | 'midSoftware'
@@ -12,6 +13,13 @@ export interface Experience {
 }
 
 export const experiences: Experience[] = [
+  {
+    role: 'seniorFrontend',
+    company: 'Stargrid',
+    link: 'https://stargrid.pro/',
+    start: '2026-09',
+    end: null,
+  },
   {
     role: 'seniorFullstack',
     company: 'Mevo',

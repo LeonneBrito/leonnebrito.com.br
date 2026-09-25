@@ -1,8 +1,11 @@
 import './globals.css'
 
 import { Analytics } from '@vercel/analytics/react'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import type { Metadata, Viewport } from 'next'
+import {
+  JetBrains_Mono as jetBrainsMono,
+  Schibsted_Grotesk as schibstedGrotesk,
+} from 'next/font/google'
 import { NextIntlClientProvider } from 'next-intl'
 import { getLocale, getMessages, getTranslations } from 'next-intl/server'
 
@@ -15,7 +18,24 @@ import { ThemeProvider } from './providers'
 
 export const dynamic = 'force-dynamic'
 
-const inter = Inter({ subsets: ['latin'] })
+const sans = schibstedGrotesk({
+  subsets: ['latin'],
+  variable: '--font-sans',
+  display: 'swap',
+})
+
+const mono = jetBrainsMono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+  display: 'swap',
+})
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#f8f7f6' },
+    { media: '(prefers-color-scheme: dark)', color: '#121110' },
+  ],
+}
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('metadata')
@@ -30,6 +50,13 @@ export async function generateMetadata(): Promise<Metadata> {
       template: `%s | ${t('title')}`,
     },
     description: t('description'),
+    openGraph: {
+      type: 'website',
+      url: '/',
+      siteName: t('title'),
+      title: t('title'),
+      description: t('description'),
+    },
   }
 }
 
@@ -38,34 +65,40 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const locale = await getLocale()
-  const messages = await getMessages()
+  const [locale, messages, t] = await Promise.all([
+    getLocale(),
+    getMessages(),
+    getTranslations('a11y'),
+  ])
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <body
-        className={`${inter.className} antialiased font-sans text-sm leading-loose text-gray-700 dark:text-gray-300 tracking-tight`}
+        className={`${sans.variable} ${mono.variable} font-sans text-base antialiased`}
       >
-        <NextIntlClientProvider locale={locale} messages={messages}>
+        {/* Only the namespaces used by client components are serialized. */}
+        <NextIntlClientProvider
+          locale={locale}
+          messages={{
+            nav: messages.nav,
+            theme: messages.theme,
+            language: messages.language,
+          }}
+        >
           <ThemeProvider
             attribute="class"
-            defaultTheme="light"
+            defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >
-            <div
-              aria-hidden
-              className="pointer-events-none fixed inset-x-0 top-0 -z-10 h-[40dvh] bg-gradient-to-b from-gray-100/70 to-transparent dark:from-gray-900/40"
-            />
-            <div className="mx-auto my-[6dvh] flex max-w-full animate-fade-up flex-col gap-6 p-6 md:max-w-2xl">
+            <a href="#content" className="skip-link">
+              {t('skip')}
+            </a>
+            <div className="mx-auto flex min-h-svh max-w-5xl flex-col px-5 sm:px-8">
               <Header />
               <Profile />
-              <main>
-                <section className="flex">
-                  <div className="relative flex h-fit w-full flex-col gap-3 px-3 py-6">
-                    {children}
-                  </div>
-                </section>
+              <main id="content" tabIndex={-1} className="flex-1 outline-none">
+                {children}
                 <Links />
               </main>
               <Footer />

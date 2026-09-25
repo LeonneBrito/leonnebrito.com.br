@@ -8,7 +8,8 @@
   "nav": {
     "home": "Home",
     "about": "About",
-    "portfolio": "Portfolio"
+    "portfolio": "Portfolio",
+    "label": "Main navigation"
   },
   "theme": {
     "toggle": "Toggle theme",
@@ -24,11 +25,11 @@
   "profile": {
     "tagline": "Fullstack developer & technology enthusiast",
     "location": "Brazil",
-    "available": "Available for work — mainly freelance"
+    "available": "Available for work, mainly freelance"
   },
   "home": {
     "greeting": "Hello, I'm Leonne!",
-    "intro": "I'm a fullstack developer and technology enthusiast, with experience at companies like <company>Mevo</company>.",
+    "intro": "I'm a fullstack developer and technology enthusiast, currently a Senior Front-end Developer at <current>Stargrid</current>, with previous experience at companies like <company>Mevo</company>.",
     "focus": "My main focus is on web development with technologies like React, Next.js, Node.js, and Tailwind CSS.",
     "availability": "I'm currently available for new opportunities, mainly freelance work. <email>Let's talk</email>."
   },
@@ -42,6 +43,7 @@
     "present": "Present"
   },
   "roles": {
+    "seniorFrontend": "Senior Front-end Developer",
     "seniorFullstack": "Senior Fullstack Developer",
     "seniorSoftware": "Senior Software Developer",
     "midSoftware": "Mid-level Software Developer"
@@ -64,10 +66,20 @@
     }
   },
   "links": {
-    "emailPrompt": "Or let's talk via email:"
+    "emailPrompt": "Or let's talk via email:",
+    "title": "Contact"
   },
   "footer": {
     "quote": "Technology is anything that wasn't around when you were born.",
     "rights": "© {year} Leonne Brito. All rights reserved."
+  },
+  "a11y": {
+    "skip": "Skip to content",
+    "newTab": "(opens in a new tab)"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist or has been moved.",
+    "back": "Back to home"
   }
 }
