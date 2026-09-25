@@ -29,7 +29,7 @@
   },
   "home": {
     "greeting": "Olá, eu sou o Leonne!",
-    "intro": "Sou desenvolvedor fullstack e entusiasta de tecnologia, com experiência em empresas como a <company>Mevo</company>.",
+    "intro": "Sou desenvolvedor fullstack e entusiasta de tecnologia, atualmente Desenvolvedor Front-end Sênior na <current>Stargrid</current>, com experiência anterior em empresas como a <company>Mevo</company>.",
     "focus": "Meu foco principal é o desenvolvimento web com tecnologias como React, Next.js, Node.js e Tailwind CSS.",
     "availability": "Atualmente estou disponível para novas oportunidades, principalmente trabalhos freelancer. <email>Vamos conversar</email>."
   },
@@ -43,6 +43,7 @@
     "present": "Atual"
   },
   "roles": {
+    "seniorFrontend": "Desenvolvedor Front-end Sênior",
     "seniorFullstack": "Desenvolvedor Fullstack Sênior",
     "seniorSoftware": "Desenvolvedor de Software Sênior",
     "midSoftware": "Desenvolvedor de Software Pleno"

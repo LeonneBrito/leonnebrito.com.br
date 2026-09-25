@@ -11,6 +11,11 @@ export default async function Home() {
       <div className="flex max-w-[62ch] flex-col gap-5 text-pretty leading-relaxed text-muted-foreground">
         <p className="text-xl leading-snug text-foreground md:text-2xl">
           {t.rich('intro', {
+            current: (chunks) => (
+              <ExternalLink href="https://stargrid.pro/" className="link">
+                {chunks}
+              </ExternalLink>
+            ),
             company: (chunks) => (
               <ExternalLink href="https://www.mevo.com.br/" className="link">
                 {chunks}
