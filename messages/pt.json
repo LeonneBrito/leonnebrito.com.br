@@ -8,7 +8,8 @@
   "nav": {
     "home": "Início",
     "about": "Sobre",
-    "portfolio": "Portfólio"
+    "portfolio": "Portfólio",
+    "label": "Navegação principal"
   },
   "theme": {
     "toggle": "Alternar tema",
@@ -24,7 +25,7 @@
   "profile": {
     "tagline": "Desenvolvedor fullstack & entusiasta de tecnologia",
     "location": "Brasil",
-    "available": "Disponível para trabalhos — principalmente freelancer"
+    "available": "Disponível para trabalhos, principalmente freelancer"
   },
   "home": {
     "greeting": "Olá, eu sou o Leonne!",
@@ -64,10 +65,15 @@
     }
   },
   "links": {
-    "emailPrompt": "Ou vamos conversar por e-mail:"
+    "emailPrompt": "Ou vamos conversar por e-mail:",
+    "title": "Contato"
   },
   "footer": {
     "quote": "Tecnologia é tudo aquilo que não existia quando você nasceu.",
     "rights": "© {year} Leonne Brito. Todos os direitos reservados."
+  },
+  "a11y": {
+    "skip": "Pular para o conteúdo",
+    "newTab": "(abre em nova aba)"
   }
 }

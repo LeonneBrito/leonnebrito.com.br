@@ -1,39 +1,49 @@
-import { Mail } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
 
 import { links } from '@/constants/links'
+
+import { ExternalLink } from './ExternalLink'
+import { Section } from './Section'
 
 export async function Links() {
   const t = await getTranslations('links')
 
   return (
-    <section className="mt-4 flex">
-      <div className="relative flex h-fit w-full flex-col gap-4 border-y border-border px-3 py-6">
-        <div className="flex flex-wrap gap-2">
-          {links.map((link) => (
+    <div className="animate-enter [--i:2]">
+      <Section id="contact-title" title={t('title')}>
+        <div className="flex flex-col gap-5">
+          <ul className="flex flex-wrap gap-x-6 gap-y-3">
+            {links.map((link) => (
+              <li key={link.url}>
+                <ExternalLink
+                  href={link.url}
+                  className="group inline-flex items-center gap-2 font-medium"
+                >
+                  <link.icon
+                    aria-hidden
+                    className="h-4 w-4 text-muted-foreground transition-colors duration-150 group-hover:text-foreground"
+                  />
+                  {link.name}
+                  <ArrowUpRight
+                    aria-hidden
+                    className="h-3.5 w-3.5 text-muted-foreground transition-[color,transform] duration-200 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-brand"
+                  />
+                </ExternalLink>
+              </li>
+            ))}
+          </ul>
+          <p className="text-pretty text-muted-foreground">
+            {t('emailPrompt')}{' '}
             <a
-              key={link.url}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 rounded-full border border-border bg-card/50 px-3 py-1.5 text-sm font-medium text-gray-700 transition-colors hover:border-gray-300 hover:bg-accent hover:text-gray-900 dark:text-gray-300 dark:hover:border-gray-700 dark:hover:text-gray-100"
+              href="mailto:britoleonne@gmail.com"
+              className="link break-all sm:break-normal"
             >
-              <link.icon className="h-4 w-4 transition-transform group-hover:-translate-y-0.5" />
-              <span>{link.name}</span>
+              britoleonne@gmail.com
             </a>
-          ))}
+          </p>
         </div>
-        <p className="inline-flex flex-wrap items-center gap-1 text-pretty text-sm leading-loose text-gray-600 dark:text-gray-400">
-          <Mail className="h-4 w-4" />
-          {t('emailPrompt')}{' '}
-          <a
-            href="mailto:britoleonne@gmail.com"
-            className="link-underline font-medium text-gray-900 dark:text-gray-100"
-          >
-            britoleonne@gmail.com
-          </a>
-        </p>
-      </div>
-    </section>
+      </Section>
+    </div>
   )
 }

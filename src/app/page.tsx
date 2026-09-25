@@ -1,25 +1,20 @@
 import { getTranslations } from 'next-intl/server'
 
+import { ExternalLink } from '@/components/ExternalLink'
+import { Section } from '@/components/Section'
+
 export default async function Home() {
   const t = await getTranslations('home')
 
   return (
-    <div className="flex flex-col gap-3">
-      <h2 className="text-pretty text-base font-medium leading-loose text-gray-900 dark:text-gray-100">
-        {t('greeting')}
-      </h2>
-      <div className="flex flex-col gap-3 text-pretty text-sm leading-loose text-gray-600 dark:text-gray-400">
-        <p>
+    <Section id="home-title" title={t('greeting')}>
+      <div className="flex max-w-[62ch] flex-col gap-5 text-pretty leading-relaxed text-muted-foreground">
+        <p className="text-xl leading-snug text-foreground md:text-2xl">
           {t.rich('intro', {
             company: (chunks) => (
-              <a
-                href="https://www.mevo.com.br/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link-underline font-medium text-gray-900 dark:text-gray-100"
-              >
+              <ExternalLink href="https://www.mevo.com.br/" className="link">
                 {chunks}
-              </a>
+              </ExternalLink>
             ),
           })}
         </p>
@@ -27,16 +22,13 @@ export default async function Home() {
         <p>
           {t.rich('availability', {
             email: (chunks) => (
-              <a
-                href="mailto:britoleonne@gmail.com"
-                className="link-underline font-medium text-gray-900 dark:text-gray-100"
-              >
+              <a href="mailto:britoleonne@gmail.com" className="link">
                 {chunks}
               </a>
             ),
           })}
         </p>
       </div>
-    </div>
+    </Section>
   )
 }

@@ -4,11 +4,11 @@ export async function Footer() {
   const t = await getTranslations('footer')
 
   return (
-    <footer className="relative mt-4 w-full px-3">
-      <div className="flex flex-col gap-1 text-pretty text-sm leading-loose text-muted-foreground">
-        <p className="italic">{t('quote')}</p>
-        <p>{t('rights', { year: new Date().getFullYear() })}</p>
-      </div>
+    <footer className="animate-enter flex flex-col gap-2 border-t py-8 text-sm text-muted-foreground [--i:3] sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
+      <p className="text-pretty italic">{t('quote')}</p>
+      <p className="shrink-0 font-mono text-xs">
+        {t('rights', { year: new Date().getFullYear() })}
+      </p>
     </footer>
   )
 }

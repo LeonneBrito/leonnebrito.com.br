@@ -2,6 +2,8 @@ import { ArrowUpRight } from 'lucide-react'
 import { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
 
+import { ExternalLink } from '@/components/ExternalLink'
+import { Section } from '@/components/Section'
 import { projects } from '@/constants/projects'
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -16,34 +18,40 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Portfolio() {
-  const t = await getTranslations('portfolio')
-  const tProjects = await getTranslations('projects')
+  const [t, tProjects] = await Promise.all([
+    getTranslations('portfolio'),
+    getTranslations('projects'),
+  ])
 
   return (
-    <div className="flex flex-col gap-3">
-      <h2 className="text-pretty text-base font-medium leading-loose text-gray-900 dark:text-gray-100">
-        {t('greeting')}
-      </h2>
-      <div className="flex flex-col gap-3">
+    <Section id="portfolio-title" title={t('greeting')}>
+      <ul className="-mt-5 divide-y">
         {projects.map((project) => (
-          <a
-            key={project.key}
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex flex-col gap-1 rounded-lg border border-border bg-card/50 p-4 transition-colors hover:border-gray-300 hover:bg-accent/50 dark:hover:border-gray-700"
-          >
-            <span className="flex items-center gap-1.5 text-sm font-medium text-gray-900 dark:text-gray-100">
-              <project.icon className="h-4 w-4 shrink-0 text-muted-foreground" />
-              {tProjects(`${project.key}.name`)}
-              <ArrowUpRight className="h-3.5 w-3.5 opacity-0 transition-opacity group-hover:opacity-100" />
-            </span>
-            <span className="text-sm leading-snug text-gray-600 dark:text-gray-400">
-              {tProjects(`${project.key}.description`)}
-            </span>
-          </a>
+          <li key={project.key}>
+            <ExternalLink
+              href={project.link}
+              className="group grid grid-cols-[auto_1fr_auto] items-baseline gap-x-4 py-5"
+            >
+              <project.icon
+                aria-hidden
+                className="h-4 w-4 translate-y-0.5 self-start text-muted-foreground"
+              />
+              <span className="flex flex-col gap-1">
+                <span className="text-lg font-medium leading-snug tracking-tight underline decoration-transparent decoration-1 underline-offset-[0.25em] transition-[text-decoration-color] duration-150 group-hover:decoration-brand">
+                  {tProjects(`${project.key}.name`)}
+                </span>
+                <span className="max-w-[56ch] text-pretty leading-relaxed text-muted-foreground">
+                  {tProjects(`${project.key}.description`)}
+                </span>
+              </span>
+              <ArrowUpRight
+                aria-hidden
+                className="h-4 w-4 self-start text-muted-foreground transition-[color,transform] duration-200 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-brand"
+              />
+            </ExternalLink>
+          </li>
         ))}
-      </div>
-    </div>
+      </ul>
+    </Section>
   )
 }

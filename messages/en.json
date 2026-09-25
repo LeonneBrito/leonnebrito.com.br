@@ -8,7 +8,8 @@
   "nav": {
     "home": "Home",
     "about": "About",
-    "portfolio": "Portfolio"
+    "portfolio": "Portfolio",
+    "label": "Main navigation"
   },
   "theme": {
     "toggle": "Toggle theme",
@@ -24,7 +25,7 @@
   "profile": {
     "tagline": "Fullstack developer & technology enthusiast",
     "location": "Brazil",
-    "available": "Available for work — mainly freelance"
+    "available": "Available for work, mainly freelance"
   },
   "home": {
     "greeting": "Hello, I'm Leonne!",
@@ -64,10 +65,15 @@
     }
   },
   "links": {
-    "emailPrompt": "Or let's talk via email:"
+    "emailPrompt": "Or let's talk via email:",
+    "title": "Contact"
   },
   "footer": {
     "quote": "Technology is anything that wasn't around when you were born.",
     "rights": "© {year} Leonne Brito. All rights reserved."
+  },
+  "a11y": {
+    "skip": "Skip to content",
+    "newTab": "(opens in a new tab)"
   }
 }
