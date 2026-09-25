@@ -75,5 +75,10 @@
   "a11y": {
     "skip": "Pular para o conteúdo",
     "newTab": "(abre em nova aba)"
+  },
+  "notFound": {
+    "title": "Página não encontrada",
+    "description": "A página que você procura não existe ou foi movida.",
+    "back": "Voltar ao início"
   }
 }
