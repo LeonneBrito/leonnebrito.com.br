@@ -1,4 +1,11 @@
-import { BarChart3, Gamepad2, Landmark, LucideIcon } from 'lucide-react'
+import {
+  BarChart3,
+  Castle,
+  Gamepad2,
+  Joystick,
+  Landmark,
+  LucideIcon,
+} from 'lucide-react'
 
 export interface Project {
   key: string
@@ -7,6 +14,16 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    key: 'overhillGames',
+    link: 'https://www.overhill.games/',
+    icon: Joystick,
+  },
+  {
+    key: 'noverisRp',
+    link: 'https://www.noverisrp.com.br/',
+    icon: Castle,
+  },
   {
     key: 'brotarComunicacao',
     link: 'https://www.brotarcomunicacao.com.br/',

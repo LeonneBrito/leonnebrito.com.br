@@ -52,6 +52,14 @@
     "greeting": "Some projects I've worked on."
   },
   "projects": {
+    "overhillGames": {
+      "name": "Overhill Games",
+      "description": "Website for Overhill Games, an independent studio showcasing its story-driven, retro-style RPGs."
+    },
+    "noverisRp": {
+      "name": "Noveris RP",
+      "description": "Website for the Noveris RP community, a medieval fantasy roleplay Minecraft server."
+    },
     "brotarComunicacao": {
       "name": "Brotar Comunicação",
       "description": "Website for an electoral, market, and public opinion research agency, active since 2012."
